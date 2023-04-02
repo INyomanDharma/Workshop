@@ -1,16 +1,13 @@
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const navigation = [
   { name: 'Dashboard', href: '/', id: 1 },
   { name: 'Gallery', href: '/gallery', id: 2 },
   { name: 'Contact', href: '/contact', id: 3 },
 ];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
-}
 
 export default function Example() {
   return (
@@ -30,18 +27,18 @@ export default function Example() {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a key={item.id} href={item.href} className={` text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium`} aria-current={item.current ? 'page' : undefined}>
+                      <NavLink key={item.id} to={item.href} className={` text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium`} aria-current={item.current ? 'page' : undefined}>
                         {item.name}
-                      </a>
+                      </NavLink>
                     ))}
                   </div>
                 </div>
               </div>
 
               <div>
-                <a href="/signin" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">
+                <NavLink to="/signin" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">
                   Login
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>

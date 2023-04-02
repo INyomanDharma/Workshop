@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App relative bg-blue-100">
+    <div className="App relative ">
       <BrowserRouter>
         <Navbar />
         <Routes>
